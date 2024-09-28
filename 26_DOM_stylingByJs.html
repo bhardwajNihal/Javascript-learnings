@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>styleByJs</title>
+</head>
+<body>
+    
+<div class="box"></div>
+
+
+<script>
+
+// we can get/set desired styles using js
+
+
+let box = document.querySelector(".box");
+// applying multiple styles using css text property : 
+box.style.cssText = "height : 400px; width: 400px; border : 2px solid black ; background-color : lightblue; border-radius : 10px";
+
+
+
+// changing attributes using setAttribute: 
+
+box.setAttribute("class","container");
+console.log(box.className);         
+
+console.log(box);
+
+box.setAttribute("style","background-color : red");  //this doesn't work as "setAttribute removes all the previous styling, thus the height, width got removed , so nothing is visible"
+
+// so we  have to set everything again from scratch
+box.setAttribute("style","height :200px ; width : 300px; background-color : red");
+
+
+//  adding multiple classname : 
+
+box.className = "container parentbox"
+
+console.log(box.className);
+console.log(box.classList);
+
+// adding more to the classlist : 
+
+box.classList.add("parentcontainer");
+
+console.log(box.classList);
+
+// checking the presence of a classname ; 
+
+console.log(box.classList.contains("parentcontainer"));     //true
+console.log(box.classList.contains("fuddu420"));            //false
+
+// Toggle removes already present attribute and adds the attribute which is not present
+box.classList.toggle("parentcontainer");
+console.log(box.classList);
+
+box.classList.toggle("daddybox");
+console.log(box.classList);
+
+
+</script>
+</body>
+</html>

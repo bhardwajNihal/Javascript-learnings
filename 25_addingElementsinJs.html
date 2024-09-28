@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>explicit div</title>
+</head>
+<body>
+    
+<div id="parent">
+
+</div>
+
+
+<script>
+// adding attributes to the parent : 
+let parentbox = document.getElementById("parent");
+parentbox.style.backgroundColor = "red";
+parentbox.style.height = "500px";
+parentbox.style.width = "500px";
+parentbox.style.padding = "20px";
+// creating child
+let achild = document.createElement("div");     //creating element
+achild.className = "innerdiv";                  //adding classname and id
+achild.id = "newid";
+achild.innerText = "Hello, this text is added explicitely!!!";      //adding content
+// addingstyles :
+achild.style.backgroundColor = "gold";
+achild.style.fontSize = "50px";
+achild.style.padding = "20px";
+
+parentbox.appendChild(achild)
+
+
+
+function addelements(element) {
+    let listItem = document.createElement("li");
+    listItem.innerText = `${element}`;
+    parentbox.appendChild(listItem);    
+}
+
+addelements("python");
+addelements("javascript");
+addelements("C++")
+
+
+// more optimized way to append child : 
+
+function addeelementopti(element){
+    let listItem = document.createElement("li");
+    listItem.appendChild(document.createTextNode(element));     //skips traversing from the start, simply creates the new textnode, hence is optimized for large projects ; 
+    parentbox.appendChild(listItem);
+}
+addeelementopti("golang");
+addeelementopti("java");    
+
+</script>
+</body>
+</html>

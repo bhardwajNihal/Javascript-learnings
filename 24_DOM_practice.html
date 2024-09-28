@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectors</title>
+</head>
+<body>
+    
+<!-- <div class="testcases">
+    <p id="fpara">hello, <br> <b>world!</b> <span id="hiddenpart" style="display: none;">Hidden text </span></p> -->
+<!-- </div> -->
+
+
+<div class="weekdays" style="font-size: 50px;" >
+    <div class="day1">Monday</div>
+    <div class="day2">tuesday</div>
+    <div class="day4">thursday</div>
+    <div class="day5">friday</div>
+    <div class="day6">saturday</div>
+</div>
+
+
+
+
+
+<script>
+    //     let para1 = document.querySelector("#fpara");
+
+    // console.log(para1);
+
+    // console.log(para1.innerHTML); 
+    // //o/p : hello, <br> <b>world!</b> <span id="hiddenpart" style="display: none;">Hidden text </span>
+
+    // console.log(para1.outerHTML);
+    // // o/p : <p id="fpara">hello, <br> <b>world!</b> <span id="hiddenpart" style="display: none;">Hidden text </span></p>
+
+    // console.log(para1.innerText);       //consider the css as it is and displays output same as visible to the user
+    // // o/p : hello,
+    // //       world!
+
+    // console.log(para1.textContent);             //ignores all the css
+    // // o/p : hello, world! Hidden text                  
+
+
+
+
+
+// ADDING  AN ELEMENT : 
+
+// A. append child() : by default adds the element to the last 
+
+    // //step1 : create element 
+    // let para3 = document.createElement("h1");
+    // // step2 : add content
+    // para3.textContent = "this para is added exclusively";
+    // // step3 : select parent 
+    // let body = document.querySelector("body");
+    // // step4 : appendchild
+    // body.appendChild(para3);
+
+
+// B. adding element to the desired position : 
+// There are 4 respective positions to which the new element can be inserted
+// i.e. afterbegin, afterend, beforebegin and beforeend  : respective to the parent div
+
+    // 1. select element respective to which the new element is to be inserted : 
+    let respectiveelement = document.querySelector(".day2");
+
+    // 2. create new element :
+    let newelement = document.createElement('div');
+
+    // 3. add classname and content to the new element : 
+    newelement.className = "day3";
+    newelement.textContent = "added wednesday";
+
+    //add element to the desired position :
+
+    respectiveelement.insertAdjacentElement("afterend",newelement);
+
+
+
+// C. removing the desired element : 
+
+    // 1. select the parent element whose child is to be removed 
+    let parentelement = document.querySelector(".weekdays");
+    // 2.select the child to be removed
+    let khotaSikka = document.querySelector(".day4");
+    // remove the desired element , using removeChild
+    parentelement.removeChild(khotaSikka);
+
+
+
+
+
+// PARENT CHILD RELATIONS : 
+
+
+// moving from parent to child
+
+    let parent = document.querySelector(".weekdays");  
+
+    console.log(parent);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i]);;
+    }
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);; 
+    }
+
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+
+    parent.firstElementChild.style.backgroundColor = "red";
+    parent.children[2].style.backgroundColor = "green"
+
+
+// moving from child to parent : 
+
+let child1 = document.querySelector(".day2");
+console.log("Parent element : ",child1.parentElement);
+
+// moving from one child to their siblings
+console.log("next siblings : ",child1.nextElementSibling);
+
+console.log("previous sibling : ",child1.previousElementSibling)
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+
+#bag{
+    background-color: lightgreen;
+    border: none;
+    margin: 20px;
+    padding: 8px 15px;
+    border-radius: 10px ;
+}
+
+#wishlist{
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#saleitem{
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin: 20px;
+}
+

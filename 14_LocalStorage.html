@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+    <h1>local storage <p>store the data to the local storage of the browser permanently and survives refresh, shut down.</p></h1>
+    <h3>check : console > applications > local storage </h3>
+</body>
+
+
+<script>
+
+let item = {
+        name : `laptop`,
+        brand : `asus`, 
+        price : 40000,
+        color : `black`,
+        specs : {                                  
+            "RAM-capacity" : "8 gb",
+            proccessor : "intel i3",
+            "storage" : "512 gb",
+        },
+
+        ratings : function(){                                     
+            console.log("This product has a rating of 4.4 stars");
+            console.log("No. of reviews : 5000");
+        },
+        
+    }
+
+
+
+
+let strobj = JSON.stringify(item);
+
+localStorage.setItem("item", strobj);       //stores the key value pairs in the local storage of the browser in the string format
+
+
+
+console.log(localStorage.getItem("item"));      //takes single argument as strings (key of object stored in the local storage)
+
+localStorage.clear();                   //clear the history of the local storage 
+
+
+localStorage.setItem("product","jeans");
+localStorage.setItem("color","blue");
+localStorage.setItem("price","5000");
+
+
+console.clear();
+
+console.log(localStorage.getItem("product"));
+console.log(localStorage.getItem("color"));
+console.log(localStorage.getItem("price"));
+
+localStorage.removeItem(`color`);           // removes a particular key value pair
+
+
+</script>
+
+
+
+
+
+</html>
